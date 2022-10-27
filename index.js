@@ -48,4 +48,12 @@ mongoose
   })
   .catch(error => {
     console.error('Error connecting to the database', error);
-  });
+  })
+  mongoose.connection.close()
+  .then (() => {
+    console.log("Nos fuimos")
+  })
+  .catch(error => {
+    console.error('No se pudo', error)
+  })
+  
