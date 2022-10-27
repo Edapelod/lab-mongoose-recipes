@@ -34,6 +34,13 @@ mongoose
     const allRecipes1 = Recipe.insertMany(data)
     return allRecipes1
   })
+  .then (() => {
+    const Ron = Recipe.findOneAndUpdate({title: "Rigatoni alla Genovese"}, {duration: "100"},
+      {new:true
+      })
+      console.log("wuhu")
+      return Ron
+  })
   .catch(error => {
     console.error('Error connecting to the database', error);
   });
