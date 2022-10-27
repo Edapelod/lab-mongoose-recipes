@@ -41,6 +41,11 @@ mongoose
       console.log("wuhu")
       return Ron
   })
+  .then (() => {
+    const hola = Recipe.deleteOne({title: "Carrot Cake"})
+    console.log("hehehe");
+    return hola
+  })
   .catch(error => {
     console.error('Error connecting to the database', error);
   });
